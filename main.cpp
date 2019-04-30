@@ -3,7 +3,7 @@
 #include "UI.h"
 
 
-		/* ### C23 – Laborübung 2 - Konstruktoren im angewandten Beispiel: Taxiunternehmen ### */
+		/* ### C23 – Laborübung 3 - Stringstreams, Kosmetik, dynamischer Speicher & statische Variablen ### */
 
 int main()
 {	
