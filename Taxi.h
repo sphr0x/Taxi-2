@@ -5,31 +5,33 @@
 #include <sstream>
 #include <list>
 
-class Taxi																			// 1 a)
+class Taxi																			
 {
 private:
 	double m_mileageDAY;
 	double m_fuelACT;
-	const double m_fuelMAX;															// 4 b)
-	const double m_consumpKM;														// 4 b)
-	const double m_costKM;															// 4 b)
+	const double m_fuelMAX;															
+	const double m_consumpKM;														
+	const double m_costKM;															
 	double m_balance;
 
-	std::string m_number;	// 3.1 a) works
-	
+	static int m_count;												// 5 a) + please check increment/decrement of every constructor/deconstructor
+	static int m_countEver;											// 5 c)
+	std::string m_number;											// 1 a)
 public:
-	// void initialize(double fuelM, double consump, double price = 0.0);			// 4 a)
+	// void initialize(double fuelM, double consump, double price = 0.0);			
 	void bookTrip(bool guest, double distance = 0.0);
 	void fillUp(double fPrice = std::rand() % 35 + 130);
-	std::string toString()const;													// 4 c)
-	Taxi(std::string name, double fuelMax, double consump, double price, double balance = 0.0);	// 4 a) | 3.3 b)
+	std::string toString()const;													
+	Taxi(double fuelMax, double consump, double price, std::string name = "dummy", double balance = 0.0);	// 3 a)
 	Taxi();
-	Taxi(const Taxi &input);														// 4 a)
+	Taxi(const Taxi &input);														
 	~Taxi();
 
-	void setName(std::string name);
-	std::string getName()const;
-	std::string getState()const;	// 3.2 a) works
-	// std::stringstream getState2()const;
+	void setName();													// 1 b)
+	std::string getName()const;										// 1 b)
+	std::string getState()const;									// 2 a)
+	std::string getCountofTaxis()const;
+	std::string staticName();
 };
 
